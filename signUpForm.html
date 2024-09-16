@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <script
+      src="https://kit.fontawesome.com/832b3fe72a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container" id="signUpContainer">
+      <form class="signUpForm" id="myForm">
+        <h2 id="signUpHead">Sign Up Here</h2>
+        <div class="row" id="nameRow">
+          <i class="fa-solid fa-user fontIcons"></i>
+          <input
+            type="text"
+            placeholder="Enter Full Name"
+            class="rowInput"
+            id="fullName"
+            required
+         pattern="^[A-Z][a-z]+(?:\s[A-Z][a-z]+)+$"
+
+           
+            onkeyup="fullNamevalidityFn()"
+          />
+        </div>
+        
+        <span id="nameError" class="errorMsg"></span>
+
+        <div class="row" id="emailRow">
+          <i class="fa-solid fa-envelope fontIcons"></i>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter Email Id"
+            class="rowInput"
+            required
+            pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
+            onkeyup="emailValidityFn()"
+          />
+        </div>
+        <span id="emailError" class="errorMsg"></span>
+
+        <div class="row" id="passwordRow">
+          <i class="fa-solid fa-lock fontIcons"></i>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            class="rowInput"
+            id="password"
+            required
+            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$"
+            onkeyup="passwordValidityFn()"
+          />
+          <div id="eyeIcon" title="Show">
+            <i class="fa-solid fa-eye fontIcons"></i>
+          </div>
+        </div>
+        <span id="passwordError" class="errorMsg"></span>
+
+        <div class="row">
+          <i class="fa-solid fa-restroom fontIcons"></i>
+          <label for="" class="genderInfoLabel">Gender</label>
+          <label class="radioLabel" for="male"
+            ><input
+              class="radioInput"
+              type="radio"
+              id="male"
+              name="gen"
+            />Male</label
+          >
+          <label class="radioLabel" for="female"
+            ><input
+              class="radioInput"
+              type="radio"
+              id="female"
+              name="gen"
+            />Female</label
+          >
+        </div>
+        <div class="row">
+          <i class="fa-solid fa-people-group fontIcons"></i>
+          <label for="" class="genderInfoLabel">Marital Status</label>
+          <label for="single" class="radioLabel"
+            ><input
+              type="radio"
+              class="radioInput"
+              id="single"
+              name="ms"
+            />Single</label
+          >
+          <label for="married" class="radioLabel"
+            ><input
+              type="radio"
+              class="radioInput"
+              id="married"
+              name="ms"
+            />Married</label
+          >
+        </div>
+        <div class="profilePicMainContainer">
+          <div class="imgContainer">
+            <img
+              src="./images/noImage.png"
+              class="profilePic"
+              id="imgTag"
+              alt=""
+            />
+          </div>
+          <input type="file" hidden id="file-input" />
+          <div class="profilePicBtnsDiv">
+            <span for="" id="select" class="btnsPP">Select Image</span>
+            <span for="" id="remove" class="btnsPP">Remove Image</span>
+          </div>
+        </div>
+
+        <div class="row" id="mobileRow">
+          <i class="fa-solid fa-phone fontIcons"></i>
+          <input
+            type="text"
+            id="mobileNumber"
+            placeholder="Enter Mobile Number"
+            class="rowInput"
+            required
+            pattern="^\d{10}$"
+            onkeyup="mobileNumberValidityFn()"
+          />
+        </div>
+        <span id="mobileError" class="errorMsg"></span>
+
+        <div class="languagesMainContainer">
+          <div class="row mainLang">
+            <i class="fa-solid fa-language fontIcons"></i>
+            <label for="" id="knownLang">Known Languages</label>
+          </div>
+          <div class="row languagesDiv">
+            <label class="radioLabel" for="english"
+              ><input
+                type="checkbox"
+                name=""
+                id="english"
+                class="radioInput"
+              />English</label
+            >
+            <label class="radioLabel" for="hindi"
+              ><input
+                type="checkbox"
+                name=""
+                id="hindi"
+                class="radioInput"
+              />Hindi</label
+            >
+            <label class="radioLabel" for="telugu"
+              ><input
+                type="checkbox"
+                name=""
+                id="telugu"
+                class="radioInput"
+              />Telugu</label
+            >
+            <label class="radioLabel" for="tamil"
+              ><input
+                type="checkbox"
+                name=""
+                id="tamil"
+                class="radioInput"
+              />Tamil</label
+            >
+          </div>
+        </div>
+        <div class="row" id="stateSelectRow">
+          <i class="fa-solid fa-landmark-flag fontIcons"></i>
+
+          <select name="" id="stateSelect">
+            <option value="">Select State</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+          </select>
+        </div>
+        <div class="row" id="citySelectRow">
+          <i class="fa-solid fa-city fontIcons"></i>
+
+          <select name="" id="citySelect">
+            <option value="">Select City</option>
+            <option value="Vijayawada">Vijayawada</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Mumbai">Mumbai</option>
+          </select>
+        </div>
+        <div class="row" id="pinCodeRow">
+          <i class="fa-solid fa-landmark-dome fontIcons"></i>
+          <input
+            type="text"
+            disabled="true"
+            placeholder=" Pincode"
+            class="rowInput"
+            id="pinCode"
+          />
+        </div>
+
+        <div class="btnsDiv">
+          <button type="reset" class="btns" id="reset">Reset</button>
+          <button type="submit" id="sbmtBtn" class="btns">Submit</button>
+          <button id="getDataBtn" type="button" class="btns">Get Details</button>
+          <button id="editDataBtn" type="button" class="btns">Edit Details</button>
+          <button id="saveDataBtn" type="button" class="btns">Update Details</button>
+
+
+        </div>
+        
+      </form>
+    </div>
+    <div class="loadDiv signUpLoader" id="loader"></div>
+    <script src="./JS/formScript.js"></script>
+    <script></script>
+  </body>
+</html>

@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FormOne</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/832b3fe72a.js" crossorigin="anonymous"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <script
+      src="https://kit.fontawesome.com/832b3fe72a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container loginontainer" id="loginContainer">
+      <form action="" class="loginForm" >
+        <h1 id="loginHeading">Sign In</h1>
+        <div class="loginChildDiv">
+          <input type="email" class="loginInput" id="loginEmail" required  />
+          <label for="" class="loginLabel">Enter Email Id</label>
+        </div>
+        <div class="loginChildDiv">
+          <input
+            type="password"
+            class="loginInput"
+            id="loginPassword"
+            required
+          />
+          <label for="" class="loginLabel">Enter Password </label>
+          <div class="passwordEye" id="eyeIconLogin" title="Show">
+            <i class="fa-solid fa-eye fontIcons"></i>
+          </div>
+        </div>
 
-<body>
-   
-    <div class="container">
-        <form action="">
-            <h2>Sign Up Here</h2>
-            <div class="row" id="name-row">
-                <label><i class="fa-solid fa-user"></i></label>
-                <input type="text" placeholder="Enter Full Name" required id="fullName" spellcheck="false" onkeyup="validateName()">
-                <span id="name-ok"></span>
-            </div>
-            <span id="name-error" class="errorSpan"></span>
-            <div class="row" id="phone-row">
-                <label for=""><i class="fa-solid fa-phone"></i></label>
-                <input type="tel" placeholder="Enter Phone Number" id="phone" required onkeyup="validatePhone()">
-                <span id="phone-ok"></span>
-            </div>
-             <span id="phone-error" class="errorSpan"></span>
-            <div class="row" id="email-row">
-                <label for=""><i class="fa-solid fa-envelope"></i></label>
-                <input type="email" placeholder="Enter Email Id" id="email" required onkeyup="validateEmail()">
-                <span id="email-ok"></span>
-            </div>
-             <span id="mail-error" class="errorSpan"></span>
-            <div class="row" id="password-row">
-                <label for=""><i class="fa-solid fa-lock"></i></label>
-                <input type="passwor" placeholder="Enter Password" id="password" required onkeyup="validatePassword()">
-                 <span id="password-ok"></span>
-            </div>
-             <span id="password-error" class="errorSpan"></span>
-             <div class="row" id="msg-row">
-               <label><i class="fa-solid fa-message"></i></label>
-                <textarea type="text" rows="1" placeholder="Enter Your Message" id="msg" required spellcheck="false" onkeyup="validateMessage()"></textarea>
-                <span id="msg-ok"></span>
-            </div>
-             <span id="msg-error" class="errorSpan"></span>
-           <div class="btn-div">
-             <button type="reset" id="reset">Reset</button>
-             <button type="submit" id="sbmt" onclick="return validateForm()">Submit</button>
-            
-           </div>
-           
-        </form>
+        <div class="logRemForgotDiv">
+          <button id="loginBtn" class="btns" title="Click to Login" type="button" >
+            Login
+          </button>
+          <div class="rememberDiv">
+            <input type="checkbox" name="" id="rmbr" /><label for="rmbr"
+              >Remember Me</label
+            >
+          </div>
+          <a href="./forgotPassword.html" title="Forgot Password">Forgot Password?</a>
+        </div>
+      </form>
+      <div class="newAccountDiv">
+        <a href="./signUpForm.html" title="Create New Account"
+          >Create an Account</a
+        >
+      </div>
     </div>
-    <script src="script.js"></script>
-</body>
+<div class="loadDiv" id="loader"></div>
+
+
+   <script src="./JS/login.js"></script>
+  </body>
 </html>
